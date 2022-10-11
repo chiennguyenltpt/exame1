@@ -282,3 +282,9 @@ body {
 		right: 10px;
 	}
 }
+
+.login {
+	font-family: 'Muli';
+	color: rgb(56, 56, 243);
+
+}

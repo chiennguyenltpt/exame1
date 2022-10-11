@@ -21,6 +21,7 @@ function checkInputs() {
 	const passwordValue = password.value.trim();
 	const password2Value = password2.value.trim();
 	
+	
 	if(usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
 	} else {
@@ -55,22 +56,50 @@ function checkInputs() {
 	} else{
 		setSuccessFor(password2);
 	}
-	if(usernameValue !== " " && isEmail(emailValue) && passwordValue===password2Value){
-		for (let key in localStorage) {
-			if (key !== emailValue) {
-				let user = {
-					username:usernameValue,
-					mail:emailValue,
-					password:passwordValue
+
+
+	if(usernameValue !== "" && isEmail(emailValue) && passwordValue===password2Value){
+		if (localStorage.getItem(emailValue) == null) {
+			let user ={
+				username:usernameValue,
+				mail:emailValue,
+				password:passwordValue,
+			} 
+			let json = JSON.stringify(user);
+			localStorage.setItem(emailValue,json)
+
+		} else {
+			for (let [key, value] of Object.entries(localStorage)) {
+				if (key === emailValue) {
+					setErrorFor(email, 'a valid email')
+				} else {
+					let user ={
+						username:usernameValue,
+						mail:emailValue,
+						password:passwordValue,
+					} 
+					let json = JSON.stringify(user);
+					localStorage.setItem(emailValue,json)
+					
+					
 				}
-				let json = JSON.stringify(user)
-				localStorage.setItem(emailValue,json)
-				window.location.href = "../login/index-login.html"
-			} else {
-				alert (`email da ton tai`)
-			}
+			  }
 		}
+		
 	}
+
+
+
+				
+
+				
+				
+				
+				
+			
+			
+				
+			
 		
 
 
@@ -99,6 +128,10 @@ function setSuccessFor(input) {
 	
 function isEmail(email) {
 	 return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
+}
+
+function moveLogin(){
+	window.location.href = '../login/index-login.html'
 }
 
 
