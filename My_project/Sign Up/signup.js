@@ -69,9 +69,14 @@ function checkInputs() {
 			localStorage.setItem(emailValue,json)
 
 		} else {
-			for (let [key, value] of Object.entries(localStorage)) {
-				if (key === emailValue) {
+			for (let [key] of Object.entries(localStorage)) {
+				
+				
+				
+				
+				if (key.includes(emailValue)) {
 					setErrorFor(email, 'a valid email')
+					
 				} else {
 					let user ={
 						username:usernameValue,
@@ -80,10 +85,15 @@ function checkInputs() {
 					} 
 					let json = JSON.stringify(user);
 					localStorage.setItem(emailValue,json)
-					
+					alert('ban da dk thanh cong ')
 					
 				}
-			  }
+				
+					
+					
+					
+				
+			}
 		}
 		
 	}
