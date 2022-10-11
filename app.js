@@ -31,8 +31,9 @@
 // ○	Cho "this is A Test"; In ra "This Is A Test"
 // ○	Cho "hello rikkei academy"; In ra "Hello Rikkei Academy”
 
-// let a = prompt("please input ").split(" ")
+// let a = prompt("please input ").trim().split(" ")
 // let x = a.map((str) =>{
+    
 //     return str[0].toUpperCase() + str.substring(1)
 // })
 // x= x.join(' ')
@@ -192,5 +193,47 @@
 // ○	Ngày 30/04/2019 là ngày hợp lệ” “Ngày tiếp theo là: 01/5/2019
 // ○	Ngày 31/12/2020 là ngày hợp lệ” “Ngày tiếp theo là: 01/01/2021
 
+
+
+let today = prompt('xin moi nhap ngay ban muon kiem tra (13/6/2020)').split('/')
+let day = today[0];
+let month = today[1];
+let year = today[2];
+console.log(day, month,year);
+if (day > 0 && month > 0 && year > 0) {
+    switch ( month) {
+        case '1': case '3': case '5': case '7': case '8' : case '10':case '12' :
+            if (0< day && day <= 31) {
+                console.log(`ngay hop le`);
+                today = new Date( `${year}-${month}-${day}`);
+                const tomorrow = moment(today).add(1, 'days').toDate()
+                console.log(tomorrow);
+            } else {
+                console.log("khong hop le");
+            }
+            
+            break;
+        case "4" : case '6' :case '9' :case '11': 
+            if (0<day && day <=30) {
+                console.log(`ngay hop le`);
+                today = new Date( `${year}-${month}-${day}`);
+                const tomorrow = moment(today).add(1, 'days').toDate()
+                console.log(tomorrow);
+                
+
+                
+                
+            } else {
+                console.log("khong hop le");
+            }
+            break
+        case 2 :
+
+
+        
+            
+    }
+    
+}
 
 
