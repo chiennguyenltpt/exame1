@@ -3,7 +3,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-console.log(password);
+
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -59,62 +59,44 @@ function checkInputs() {
 
 
 	if(usernameValue !== "" && isEmail(emailValue) && passwordValue===password2Value){
-		if (localStorage.getItem(emailValue) == null) {
-			let user ={
-				username:usernameValue,
-				mail:emailValue,
-				password:passwordValue,
-			} 
-			let json = JSON.stringify(user);
-			localStorage.setItem(emailValue,json)
-
+		var infoUser = []
+		let user = {
+			username:usernameValue,
+			mail:emailValue,
+			password:passwordValue,
+		};
+		if (localStorage.getItem("infoUser") == null) {
+			infoUser.push(user);
+			localStorage.setItem("infoUser",JSON.stringify(infoUser));
+			
 		} else {
-			for (let [key] of Object.entries(localStorage)) {
-				
-				
-				
-				
-				if (key.includes(emailValue)) {
-					setErrorFor(email, 'a valid email')
-					
+			let getInfoUser = localStorage.getItem("infoUser")
+			getInfoUser= JSON.parse(getInfoUser)
+			
+			let flag = false
+			for (key of getInfoUser) {
+				if (key["mail"] ==emailValue){
+					flag = false
 				} else {
-					let user ={
-						username:usernameValue,
-						mail:emailValue,
-						password:passwordValue,
-					} 
-					let json = JSON.stringify(user);
-					localStorage.setItem(emailValue,json)
-					alert('ban da dk thanh cong ')
-					
+					flag = true
 				}
-				
-					
-					
-					
-				
+			};
+
+			if (flag == false ) {
+				setErrorFor(email , "email available")
+			} else {
+				getInfoUser.push(user);
+				localStorage.setItem("infoUser",JSON.stringify(getInfoUser))
 			}
+
 		}
-		
 	}
-
-
-
-				
-
-				
-				
-				
-				
-			
-			
-				
-			
-		
-
-
-
 }
+				
+
+
+
+
 
 
 
@@ -143,15 +125,3 @@ function isEmail(email) {
 function moveLogin(){
 	window.location.href = '../login/index-login.html'
 }
-
-
-
-
-
-
-	
-
-
-
-
-

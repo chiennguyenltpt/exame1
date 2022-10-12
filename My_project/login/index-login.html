@@ -16,29 +16,48 @@
             <ul>
                 <li><button class="button" onclick="location.assign('//127.0.0.1:5501/project%20one/index-Home.html')"> HOME</button></li>
                 <li><button class="button">ABOUT ME</button></li>
-                <li><button class="button" onclick="dieuhuong()" >MY COLLECTION</button></li>
                 <li><button class="button">CONTACT ME</button></li>
                 <li><button class="button" onclick="location.assign('//127.0.0.1:5501/login/index-login.html')" >LOGIN</button></li>
             </ul>
         </div>
 
+        <div class="container">
+            <div class="slide">
 
+            </div>
 
+            <div class="login">
+                <div class="login-box">
+                    <div class="mail" id="mail">
+                        <label for="">email</label><br>
+                        <input type="text" placeholder="email"><br>
+                        <small>error message</small>
+                    </div>
+                    <div class="password" id="password">
+                        <label for="">password</label><br>
+                        <input type="password" placeholder="password"><br>
+                        <small>error message</small>
+                    </div>
 
-        <div class="login">
-            <div class="content">
-                <div class="login-text">
-                    <h2>LOGIN</h2>
-                </div>
-                <div class="input">
-                    <input id="username" type="text" placeholder="User Name"><br>
-                    <input id =' password' type="text" placeholder="PassWord"><br>
-                    <button>Log in</button>
-                    <p>you don't have account ! <span onclick="location.assign('//127.0.0.1:5501/Sign%20Up/sign-up.html')">Sign up here</span> </p>
+                    <div class="bnt-login">
+                        <button onclick="login()" >login</button>
+                    </div>
+
+                    <div class="bnt-signup">
+                        <button>sign-up</button>
+                    </div>
+
 
                 </div>
             </div>
+
+
         </div>
+
+
+
+
+
     </div>
     <script src="./login.js"></script>
 </body>

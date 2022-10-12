@@ -288,3 +288,6 @@ body {
 	color: rgb(56, 56, 243);
 
 }
+.login:hover{
+	cursor: pointer;
+}
