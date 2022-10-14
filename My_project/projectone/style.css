@@ -70,9 +70,75 @@ body {
   }
 
 
+  .user{
+    right: 0;
+   
+    width: 200px;
+    position: relative;
+    height: 60px;
+  }
+  .user i{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left:10%;
+    font-size:21px;
+    color: white;
+    cursor: pointer
+  }
+  .user i:hover{
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color:black;
+    transform: translateY(-7px);
+  }
+.user label{
+    position: relative;
+    left: 30%;
+    top:5px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    letter-spacing: 1.5px;
+    color:white;
+    cursor: pointer;
+
+    
+}
+.user label:hover{
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color:black;
+    transform: translateY(-7px);
+}
 
 
-  
+.user h3 {
+    position: relative;
+    bottom: 7px;
+    left: 80px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    width:98px;
+}
+.user h3:hover{
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color:black;
+    
+}
+
+
+
+
+
+
+
+
+  /* baner */
 .baner {
     height: 110vh;
     width: 100%;

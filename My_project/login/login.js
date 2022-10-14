@@ -45,12 +45,18 @@ function login() {
                index = i;
                localStorage.setItem("boolean", 'true')
                localStorage.setItem('user', index)
-               window.location.href = '/project one/index-Home.html'
+               window.location.href = '/projectone/index-Home.html'
                break
                
             }
          } 
       }
    }
+}
+
+
+
+function signup() {
+   document.location.href = '/Sign Up/sign-up.html'
 }
 

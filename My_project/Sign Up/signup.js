@@ -88,6 +88,7 @@ function checkInputs() {
 			} else {
 				getInfoUser.push(user);
 				localStorage.setItem("infoUser",JSON.stringify(getInfoUser))
+				document.location.href = '/login/index-login.html'
 			}
 
 		}
