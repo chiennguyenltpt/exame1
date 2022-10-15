@@ -60,3 +60,13 @@ function signup() {
    document.location.href = '/Sign Up/sign-up.html'
 }
 
+
+// reset lai logout
+function resetLogout(){
+
+   let getBoolean =JSON.parse(localStorage.getItem('boolean'))
+   console.log(getBoolean);
+   if(getBoolean==false) {
+      window.location.href = '../login/index-login.html'
+   }
+}

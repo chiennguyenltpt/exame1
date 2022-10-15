@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 body {
     font-family: monospace;
@@ -86,18 +87,12 @@ body {
     color: white;
     cursor: pointer
   }
-  .user i:hover{
-    background-color: #2EE59D;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color:black;
-    transform: translateY(-7px);
-  }
 .user label{
     position: relative;
-    left: 30%;
+    left: 25%;
     top:5px;
     font-size: 15px;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Great' ;
     font-weight:bold;
     letter-spacing: 1.5px;
     color:white;
@@ -116,8 +111,8 @@ body {
 .user h3 {
     position: relative;
     bottom: 7px;
-    left: 80px;
-    font-family: 'Roboto', sans-serif;
+    left: 77px;
+    font-family: 'Great';
     color: white;
     font-size: 13px;
     letter-spacing: 1.5px;
@@ -130,7 +125,16 @@ body {
     color:black;
     
 }
+.changePassword {
+    background-color: aqua;
+    width: 200px;
+    height:150px;
+    font-family:"Muli";
+    font-size: 23;
+    
+    
 
+}
 
 
 
@@ -169,6 +173,14 @@ body {
     font-size: 10vh;
     font-family: "Great Vibes" cursive;
     z-index: 3;
+    cursor: pointer;
+}
+.baner .title:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    border: 1mm solid rgb(230, 77, 77);
+    scale: (1.5);
+    border-radius: 15px;
 }
 .baner img {
     position: absolute;
