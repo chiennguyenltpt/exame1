@@ -40,7 +40,7 @@ function checkInputs() {
 		
 	}
 	
-	if(passwordValue === '') {
+	if(passwordValue === '' && passwordValue.length<6) {
 		setErrorFor(password, 'Password cannot be blank');
 		
 	} else {
@@ -50,7 +50,7 @@ function checkInputs() {
 		
 	}
 	
-	if(password2Value === '') {
+	if(password2Value === '' && password2Value.length < 6) {
 		setErrorFor(password2, 'Password2 cannot be blank');
 	} else if(passwordValue !== password2Value) {
 		setErrorFor(password2, 'mat khau trung lap');

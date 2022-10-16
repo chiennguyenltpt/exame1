@@ -15,26 +15,40 @@
             <div class="logo">
                 <img src="./image/logo.png" alt="">
             </div>
-            <ul>
-                <li><button class="button" > HOME</button></li>
-                <li><button class="button">ABOUT ME</button></li>
-                <li><button class="button" >MY COLLECTION</button></li>
-                <li><button class="button">CONTACT ME</button></li>
-                <li><button class="button"  onclick="logOut()">Log out</button></li>
-            </ul>
+                <ul>
+                    <li><button class="button" > HOME</button></li>
+                    <li><button class="button">ABOUT ME</button></li>
+                    <li><button class="button" >MY COLLECTION</button></li>
+                    <li><button class="button">CONTACT ME</button></li>
+                    <li><button class="button"  onclick="logOut()">Log out</button></li>
+                </ul>
 
             
 
 
-            <div class="user" >
-                <i class="fa-solid fa-user-large"></i>
-                <label >Hello !!!</label> <br>
-                <h3>this is label</h3><br>
+                <div class="user" >
+                    <i onclick="showLogoutAndAccount()" class="fa-solid fa-user-large"></i>
+                    <label >Hello !!!</label> <br>
+                    <h3>this is label</h3><br>
+                    
+                </div>
+            <!-- khoi thanh doi pass word -->
                 <div class="changePassword">
                     <h3>Change Password</h3>
                     <h3>Your Account</h3>
                 </div>
-            </div>
+
+
+            <!-- Thay doi pass word -->
+                <div class="makeNewPassword">
+                    <h2>CHANGE PASSWORD</h2>
+                    <input type="text" placeholder="Old Password"><br>
+                    <small>error Password</small><br>
+                    <input type="text" placeholder="New Password"><br>
+                    <small>error Password</small><br>
+                    <input type="text" placeholder="Confirm Password"><br>
+                    <small>error Password</small>
+                </div>
             </div>
         </div>
 

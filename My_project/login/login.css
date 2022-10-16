@@ -113,20 +113,22 @@ body{
 }
 .slide-show{
     position: absolute;
-    max-width: 60%;
+    max-width: 100%;
     min-height: 70%;
     background-color: rgba(0, 0, 0, 0.3);
     top: 95px;
     left: 95px;
-    ;
-    
     border-radius:14px;
     color:white
 }
 iframe{
     border: 0.9mm ridge rgba(247, 95, 95, 0.6);
     border-radius:14px;
-    color:white
+    color:white;
+    width: 800px;
+    position: relative;
+    height: 500px;
+    
 }
 
 

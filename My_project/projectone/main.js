@@ -34,3 +34,18 @@ function helloUser(){
     document.querySelector('.user h3').innerHTML = userValue[indexUser].username
 
 }
+
+// xuat an hien o logout va thong tin dang nhap
+function showLogoutAndAccount() {
+    if(document.getElementsByClassName("changePassword")[0].style.visibility=="hidden") {
+        document.getElementsByClassName("changePassword")[0].style.visibility = "visible"
+    } else {
+        document.getElementsByClassName("changePassword")[0].style.visibility = 'hidden'
+    }
+}
+
+// func chang password 
+
+function changePassword() {
+    document.querySelectorAll
+}

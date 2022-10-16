@@ -11,7 +11,7 @@ body {
     top: 0;
     left: 0;
     width: 80%;
-    padding: 0 10%;
+    padding: 0 3%;
     
     display: flex;
     align-items: center;
@@ -72,7 +72,7 @@ body {
 
 
   .user{
-    right: 0;
+    right: 50px;
    
     width: 200px;
     position: relative;
@@ -111,7 +111,7 @@ body {
 .user h3 {
     position: relative;
     bottom: 7px;
-    left: 77px;
+    left: 50px;
     font-family: 'Great';
     color: white;
     font-size: 13px;
@@ -126,18 +126,69 @@ body {
     
 }
 .changePassword {
-    background-color: aqua;
-    width: 200px;
-    height:150px;
-    font-family:"Muli";
-    font-size: 23;
-    
-    
-
+    background-color: #f1f6f4;
+    top:70px;
+    position:absolute;
+    right: -8%;
+    width: 160px;
+    text-align: center;
+    border-radius: 13px;
+    visibility: hidden;
+}
+.changePassword h3 {
+    color: black;
+    font-family: 'Roboto',sans-serif;
+    font-size: 14px;
+    cursor:pointer;
+}
+.changePassword h3:active{
+    color: #2EE59D;
 }
 
 
+/*  Thay doi pass word*/
+.makeNewPassword {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    top: 130px;
+    right: -100px;
+    border-radius: 15px;
+    font-family: "Muli";
+    font-weight: 1000;
 
+}
+.makeNewPassword h2 {
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    text-align: center;
+    word-spacing: 13px;
+}
+.makeNewPassword input {
+    position: relative;
+    top: 70px;
+    left: 30px;
+    width: 80%;
+    height: 40px;
+    margin-top: 40px;
+    outline: none;
+    border-bottom: 2px rgb(204, 16, 16) double ;
+    border-radius: 13px;
+    padding-left:10px ;
+    font-family: "Muli";
+}
+.makeNewPassword small {
+    color: red;
+    position: absolute;
+    left: 35px;
+    margin-top: 73px;
+    font-family: "Muli";
+    font-weight: 300;
+
+}
 
 
 
