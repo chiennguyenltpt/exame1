@@ -34,7 +34,7 @@
                 </div>
             <!-- khoi thanh doi pass word -->
                 <div class="changePassword">
-                    <h3>Change Password</h3>
+                    <h3 onclick="showChangePassword()">Change Password</h3>
                     <h3>Your Account</h3>
                 </div>
 
@@ -48,6 +48,11 @@
                     <small>error Password</small><br>
                     <input type="text" placeholder="Confirm Password"><br>
                     <small>error Password</small>
+                    <div class="bnt-savepassword">
+                        <button onclick="changePassword()">Save</button>
+                        <button onclick = "cancelChangePassword()">Cancel</button><br>
+                        <p>  change password sucsecc !!</p>
+                    </div>
                 </div>
             </div>
         </div>

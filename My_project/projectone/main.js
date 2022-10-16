@@ -47,5 +47,57 @@ function showLogoutAndAccount() {
 // func chang password 
 
 function changePassword() {
-    document.querySelectorAll
+
+    let oldPassword =  document.querySelectorAll(".makeNewPassword input")[0].value;
+    let newPassword =document.querySelectorAll(".makeNewPassword input")[1].value;
+    let confirmPassword = document.querySelectorAll(".makeNewPassword input")[2].value;
+    let infoUser = JSON.parse(localStorage.getItem("infoUser"))
+    let indexUser = localStorage.getItem("user")
+    if (oldPassword.length<6) {
+        setTimeout(() =>{
+            document.querySelectorAll(".makeNewPassword small")[0].style.visibility = "visible"
+        },5)
+    }
+    if (newPassword.length<6) {
+        document.querySelectorAll(".makeNewPassword small")[1].style.visibility = "visible"
+    }
+
+    if (confirmPassword.length<6) {
+        document.querySelectorAll(".makeNewPassword small")[2].style.visibility = "visible"
+    }
+
+    if (oldPassword != infoUser[indexUser].password){ 
+        document.querySelectorAll(".makeNewPassword small")[0].style.visibility = "visible"
+        document.querySelectorAll(".makeNewPassword small")[0].innerHTML = "password wrong"
+    } else if (newPassword != confirmPassword || newPassword.length<6 ) {
+        document.querySelectorAll(".makeNewPassword small")[2].style.visibility = "visible"
+        document.querySelectorAll(".makeNewPassword small")[2].innerHTML = "password is not the same"
+    } else {
+        infoUser[indexUser].password = newPassword
+        
+        localStorage.setItem('infoUser',JSON.stringify(infoUser))
+        document.querySelector(".bnt-savepassword p").style.visibility = "visible"
+        document.querySelectorAll(".makeNewPassword small")[0].style.visibility = "hidden"
+        document.querySelectorAll(".makeNewPassword small")[1].style.visibility = "hidden"
+        document.querySelectorAll(".makeNewPassword small")[2].style.visibility = "hidden"
+    }
 }
+
+// funct cancel changePassword
+function cancelChangePassword() {
+    document.querySelector(".makeNewPassword").style.visibility = "hidden"
+    document.querySelectorAll(".makeNewPassword small")[0].style.visibility = "hidden"
+    document.querySelectorAll(".makeNewPassword small")[1].style.visibility = "hidden"
+    document.querySelectorAll(".makeNewPassword small")[2].style.visibility = "hidden"
+}
+
+
+
+function showChangePassword() {
+    if (document.querySelector(".makeNewPassword").style.visibility == "hidden") {
+        document.querySelector(".makeNewPassword").style.visibility = "visible"
+    } else {
+        document.querySelector(".makeNewPassword").style.visibility = "hidden"
+    }
+}
+

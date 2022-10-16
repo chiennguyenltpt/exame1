@@ -157,6 +157,7 @@ body {
     border-radius: 15px;
     font-family: "Muli";
     font-weight: 1000;
+    visibility: hidden;
 
 }
 .makeNewPassword h2 {
@@ -187,7 +188,23 @@ body {
     margin-top: 73px;
     font-family: "Muli";
     font-weight: 300;
+    visibility: hidden;
 
+}
+.bnt-savepassword {
+    position: absolute;
+    bottom: 80px;
+    left:50%;
+    transform: translate(-50%);
+    width: 80%;
+    text-align: center;
+    height:30px;
+}
+.bnt-savepassword p{
+    
+    font-family: "Muli";
+    font-weight: 300;
+    visibility: hidden
 }
 
 
