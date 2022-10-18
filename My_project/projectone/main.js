@@ -32,6 +32,7 @@ function helloUser(){
     console.log(indexUser);
     console.log(userValue[indexUser].username);
     document.querySelector('.user h3').innerHTML = userValue[indexUser].username
+    localStorage.setItem("inforAccount",JSON.stringify({username:userValue[indexUser].username ,mail:userValue[indexUser].mail}))
 
 }
 
