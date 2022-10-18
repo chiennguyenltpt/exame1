@@ -25,7 +25,8 @@ function moveHome() {
 // show user name 
 function  showName() {
     console.log(localStorage.getItem('inforAccount'));
-    let name = JSON.parse(localStorage.getItem('inforAccount')).username;
+    let name = JSON.parse(localStorage.getItem('inforAccount'));
+    console.log(name);
     console.log(localStorage.getItem('inforAccount'));
     document.querySelector('.user h3').textContent = name
 }
@@ -105,7 +106,7 @@ function showDetail(id) {
 
 function buyNow() {
     document.getElementById("show-product").style.visibility = "hidden" 
-
+    document.getElementsByClassName("buy-now")[0].style.visibility = "visible" 
     let imgname =  document.getElementById('descrise-product').getAttribute('src')
     console.log(imgname);
     let product = JSON.parse(localStorage.getItem('product'))
@@ -124,10 +125,23 @@ function buyNow() {
                     <p>Price : <span>${key.price}</span>$</p>
                 </div>
                 <div class="bnt-buynow">
-                    <button>Checkout</button>
-                    <button>Cancel</button><br>
+                    <button onclick="checkoutSuccess()" >Checkout</button>
+                    <button onclick="cancelBuyNow()">Cancel</button><br>
                     <small>bạn đã mua thành công!!</small>
                 </div>`
+
+                
     let layOutSum = document.getElementById("buy-product")
     layOutSum.innerHTML = layOut
+}
+
+//  thong bao thanh toan thanh cong
+function checkoutSuccess() {
+    document.querySelector(".bnt-buynow small").style.visibility="visible"
+}
+// huy thanh toan mua ngay
+function cancelBuyNow() {
+    document.getElementsByClassName("buy-now")[0].style.visibility = "hidden"
+    document.querySelector(".bnt-buynow small").style.visibility="hidden"
+    document.getElementById("show-product").style.visibility = "visible" 
 }

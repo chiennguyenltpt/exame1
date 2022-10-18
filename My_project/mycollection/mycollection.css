@@ -257,7 +257,7 @@ input[type="search"]:focus {
     position: relative;
     cursor: pointer;
     border-radius: 10px;
-    border: 2px black solid
+    
 
 }
 
@@ -268,7 +268,7 @@ input[type="search"]:focus {
     right: 0px;
     bottom: 50px;
     right: 20px;
-    border: 5px black solid; 
+     
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     position: fixed;
@@ -374,6 +374,8 @@ input[type="search"]:focus {
     position: fixed;
     left: 2%;
     border-radius: 15px;
+    visibility: hidden;
+    border: none
     
     /* opacity: 0.4 */
 
@@ -382,6 +384,7 @@ input[type="search"]:focus {
     position: absolute;
     width: 400px;
     height: 500px;
+    
 }
 .total {
     position: absolute;
