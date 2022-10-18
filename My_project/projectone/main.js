@@ -101,3 +101,58 @@ function showChangePassword() {
     }
 }
 
+
+
+// show inforUser 
+function showInfoUser() {
+    if(document.getElementById('showAccount').style.visibility =='hidden') {
+        document.getElementById('showAccount').style.visibility ="visible"
+        let dataInforUser = JSON.parse(localStorage.getItem('inforAccount'))
+        for (i=0;i<document.querySelectorAll("#showAccount span").length;i++) {
+            for (j=0;j<Object.values(dataInforUser).length;j++) {
+                document.querySelectorAll("#showAccount span")[i].innerHTML = Object.values(dataInforUser)[i]        
+            }
+        }
+    } else {
+        document.getElementById('showAccount').style.visibility ="hidden"
+    }
+
+    
+}
+
+// update infor
+function update() {
+    let inforAccount = JSON.parse(localStorage.getItem("inforAccount"))
+    inforAccount.birthday = document.querySelectorAll(".update input")[0].value
+    inforAccount.phone = document.querySelectorAll(".update input")[1].value
+    inforAccount.address = document.querySelectorAll(".update input")[2].value
+    localStorage.setItem('inforAccount',JSON.stringify(inforAccount)) 
+    document.getElementsByClassName('update')[0].style.visibility = "hidden" 
+} 
+
+
+// cancel showinfor
+function cancelShowImfor() {
+    document.getElementById('showAccount').style.visibility ="hidden"
+}
+
+// cancel update
+function cancelUpdate() {
+    document.getElementsByClassName('update')[0].style.visibility = "hidden"
+    
+}
+
+// functtion chuyen update
+function changeUpdate () {
+    document.getElementsByClassName('update')[0].style.visibility = "visible"
+    document.getElementById('showAccount').style.visibility ="hidden"
+}
+
+
+
+// chuyen sang tran collection
+function moveCollection() {
+    window.location.href = '../mycollection/mycollection.html'
+}
+
+    

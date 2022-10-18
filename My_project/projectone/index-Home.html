@@ -18,7 +18,7 @@
                 <ul>
                     <li><button class="button" > HOME</button></li>
                     <li><button class="button">ABOUT ME</button></li>
-                    <li><button class="button" >MY COLLECTION</button></li>
+                    <li><button onclick="moveCollection()" class="button" >MY COLLECTION</button></li>
                     <li><button class="button">CONTACT ME</button></li>
                     <li><button class="button"  onclick="logOut()">Log out</button></li>
                 </ul>
@@ -35,7 +35,7 @@
             <!-- khoi thanh doi pass word -->
                 <div class="changePassword">
                     <h3 onclick="showChangePassword()">Change Password</h3>
-                    <h3>Your Account</h3>
+                    <h3 onclick=" showInfoUser()">Your Account</h3>
                 </div>
 
 
@@ -46,7 +46,7 @@
                     <small>error Password</small><br>
                     <input type="text" placeholder="New Password"><br>
                     <small>error Password</small><br>
-                    <input type="text" placeholder="Confirm Password"><br>
+                    <input type=" text" placeholder="Confirm Password"><br>
                     <small>error Password</small>
                     <div class="bnt-savepassword">
                         <button onclick="changePassword()">Save</button>
@@ -54,13 +54,43 @@
                         <p>  change password sucsecc !!</p>
                     </div>
                 </div>
+
+                <!-- show Account -->
+                <div id="showAccount">
+                    <h2>INFORMATION USER</h2>
+                    <pre>
+                        User name : <span></span>
+                        
+                        Email     : <span></span> 
+                        
+                        Birthday  : <span></span> 
+                        
+                        Phone     : <span></span> 
+
+                        Address   : <span></span>
+                    </pre>
+                    <button onclick="changeUpdate ()">update</button>
+                    <button onclick="cancelShowImfor()">cancel</button>
+                    
+
+                </div>
+                    
+                    <div class="update">
+                        <input type="text" placeholder="Your Birthday yyyy/mm/dd"><br>
+                        <input type="text" placeholder="Your phone"><br>
+                        <input type="text" placeholder="address"><br>
+                        <button onclick="update()">Save</button>
+                        <button class="cancelUpdate" onclick="cancelUpdate()">cancel</button>
+
+                        
+                    </div>
             </div>
         </div>
 
         <!--  -->
         <div class="baner">
             <div class="title">95Hz Dev</div>
-            <img src="./image/csgo1.png" alt="">
+            <img  id ='baner' src="./image/csgo1.png" alt="">
             
         </div>
 

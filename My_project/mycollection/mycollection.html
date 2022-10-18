@@ -1,160 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./mycollection.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+
+<body onload="showName() ,newproduct()">
     <div class="container">
+        <img src="../projectone/image/baner1.jpeg" alt="">
         <div class="nav">
             <div class="logo">
                 <img src="./image/logo.png" alt="">
             </div>
             <ul>
-                <li><button class="button" onclick="location.assign('//127.0.0.1:5501/project%20one/index-Home.html')" > HOME</button></li>
+                <li><button class="button" onclick="moveHome()"> HOME</button></li>
                 <li><button class="button">ABOUT ME</button></li>
-                <li><button class="button" onclick="dieuhuong()" >MY COLLECTION</button></li>
+                <li><button class="button" onclick="dieuhuong()">MY COLLECTION</button></li>
                 <li><button class="button">CONTACT ME</button></li>
-                
+                <div class="bnt">
+                    <li><button class="button"></i><i class="fa-solid fa-cart-arrow-down"></i></button></li>
+
+
+                </div>
+                <div class="nav-newsproduct">
+                    <button onclick="newproduct()">new product</button>
+                    <button onclick="trendProduct () ">trend product</button>
+                    <button onclick="saleProduct()">sale product</button>
+                </div>
+
             </ul>
         </div>
-        <div class="bnt">
-            <li><button class="button"></i><i class="fa-solid fa-cart-arrow-down"></i></button></li>
-            
-
+        <div class="user">
+            <i class="fa-solid fa-user-large"></i>
+            <h3>this is label</h3><br>
         </div>
-        
-
-        <div class="main">
-            <div class="layout">
-                <div class="layout-item">
-                    <img  src="./image/1c75d49cb71f08f06a5ba3ff06180046.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
 
 
 
+
+    </div>
+
+    </div>
+    <!-- wrapper1 -->
+    <div class="detail-product">
+
+        <div class="slide-text">
+            <input class="search" type="search" placeholder="search">
+        </div>
+
+        <!-- TT SP -->
+
+        <div class="product">
+            <div  class="show-product" id="show-product">
+
+
+            </div>
+
+            <!-- .descrise-product -->
+            <div class="descrise-product">
+                <img id="descrise-product" src="./image/anh14.jpeg" alt=""><br>
+                <div class="detail">
+                    Name : <span>Ak47</span>
+                    Dame : <span>100%</span>
+                    Clid : <span>30%</span>
                 </div>
-                <div class="layout-item">
-                    <img src="./image/313de227f70b25d955fd5afbfedfe737.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                    <img src="./image/40837c6f6732f3b553bac8a02f512bd9.jpeg" alt="">
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button> 
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                     <img src="./image/570413.jpeg" alt="">
-                     <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                 </div>
-                <div class="layout-item">
-                    <img src="./image/AK47-Legend-iPhone-Wallpaper.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                    <img src="./image/Biohazard-AK-47.jpeg" alt="">
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                    <img src="./image/HD-wallpaper-kalashnikov-army-machine-gun-red-gun-russia-russian-black-camo.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                <img src="./image/Biohazard-AK-47.jpeg" alt=""> 
-                <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                <img src="./image/17239162.jpeg" alt=""> 
-                <button class="bnt-add">Buy Now</button>
-                <button class="bnt-buynow">Add to Cart</button>
-                <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                    <img src="./image/313de227f70b25d955fd5afbfedfe737.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                    <img src="./image/2009464754_preview_20210923101635_1.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                     <img src="./image/2248019835_preview_10PP HR.jpeg" alt=""> 
-                     <button class="bnt-add">Buy Now</button>
-                     <button class="bnt-buynow">Add to Cart</button>    
-                     <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                 <div class="layout-item">
-                        <img src="./image/Biohazard-AK-47.jpeg" alt=""> 
-                        <button class="bnt-add">Buy Now</button>
-                        <button class="bnt-buynow">Add to Cart</button>
-                        <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
+                <div class="price">
+                    <span>90</span>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <div class="bnt-card">
+                        <button onclick="buyNow()">BUY NOW</button>
+                        <button>ADD TO CARD</button>
                     </div>
-                <div class="layout-item">
-                    <img src="./image/1c75d49cb71f08f06a5ba3ff06180046.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-                </div>
-                <div class="layout-item">
-                     <img src="./image/stattrak-m4a4-howl.jpeg" alt=""> 
-                     <button class="bnt-add">Buy Now</button>
-                     <button class="bnt-buynow">Add to Cart</button> 
-                     <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
-
-                </div>
-                <div class="layout-item">
-                    <img src="./image/images.jpeg" alt=""> 
-                    <button class="bnt-add">Buy Now</button>
-                    <button class="bnt-buynow">Add to Cart</button>
-                    <h3>Vạn Sự Tuỳ Duyên</h3>
-                    <label >500k</label>
                 </div>
 
             </div>
         </div>
 
-    </div>
-    <!-- wrapper1 -->
-    <script src="./main.js"></script>
 
-    
+
+        <!-- Buy Now -->
+        <div class="buy-now">
+            <div  class="buy-product" id="buy-product" >
+               
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="./mycollection.js"></script>
+
+
 </body>
+
 </html>
