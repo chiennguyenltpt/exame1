@@ -26,13 +26,21 @@ function resetLogout(){
 
 // xin chao user 
 function helloUser(){
-    let userValue = JSON.parse(localStorage.getItem('infoUser'))
-    let indexUser = localStorage.getItem('user')
-    console.log(userValue);
-    console.log(indexUser);
-    console.log(userValue[indexUser].username);
-    document.querySelector('.user h3').innerHTML = userValue[indexUser].username
-    localStorage.setItem("inforAccount",JSON.stringify({username:userValue[indexUser].username ,mail:userValue[indexUser].mail}))
+    if (localStorage.getItem("inforAccount")==null){
+        let userValue = JSON.parse(localStorage.getItem('infoUser'))
+        let indexUser = localStorage.getItem('user')
+        console.log(userValue[indexUser].username);
+        document.querySelector('.user h3').innerHTML = userValue[indexUser].username
+        localStorage.setItem("inforAccount",JSON.stringify({username:userValue[indexUser].username ,mail:userValue[indexUser].mail}))
+    } else {
+        let dataInforUser = JSON.parse(localStorage.getItem('inforAccount'))
+        for (i=0;i<document.querySelectorAll("#showAccount span").length;i++) {
+            for (j=0;j<Object.values(dataInforUser).length;j++) {
+                document.querySelectorAll("#showAccount span")[i].innerHTML = Object.values(dataInforUser)[i] 
+                    
+            }
+        }
+    }
 
 }
 
@@ -109,9 +117,11 @@ function showInfoUser() {
     if(document.getElementById('showAccount').style.visibility =='hidden') {
         document.getElementById('showAccount').style.visibility ="visible"
         let dataInforUser = JSON.parse(localStorage.getItem('inforAccount'))
+        console.log(dataInforUser);
         for (i=0;i<document.querySelectorAll("#showAccount span").length;i++) {
             for (j=0;j<Object.values(dataInforUser).length;j++) {
-                document.querySelectorAll("#showAccount span")[i].innerHTML = Object.values(dataInforUser)[i]        
+                document.querySelectorAll("#showAccount span")[i].innerHTML = Object.values(dataInforUser)[i] 
+                    
             }
         }
     } else {

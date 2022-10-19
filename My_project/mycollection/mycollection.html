@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body onload="showName()">
+<body onload="showName(),newproduct() ">
     <div class="container">
         <img src="../projectone/image/baner1.jpeg" alt="">
         <div class="nav">
@@ -25,9 +25,7 @@
                 <li><button class="button" onclick="dieuhuong()">MY COLLECTION</button></li>
                 <li><button class="button">CONTACT ME</button></li>
                 <div class="bnt">
-                    <li><button class="button"></i><i class="fa-solid fa-cart-arrow-down"></i></button></li>
-
-
+                    <li><i class="fa-solid fa-cart-arrow-down"></i></li>
                 </div>
                 <div class="nav-newsproduct">
                     <button onclick="newproduct()">new product</button>
@@ -76,7 +74,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <div class="bnt-card">
                         <button onclick="buyNow()">BUY NOW</button>
-                        <button>ADD TO CARD</button>
+                        <button onclick="clickAddToCard ()" >ADD TO CARD</button>
                     </div>
                 </div>
 
@@ -91,8 +89,39 @@
                
             </div>
         </div>
+        <!-- thong bao them thanh conng vao gio hang -->
+        <div class="notice-addcard">
+            <h3>Bạn đã thêm thành công vào giỏ hàng</h3>
+        </div>
+
+
+
+        <!-- Gio hang -->
+        <div class="shopping">
+            <div  class="notice-product">
+                <h2>THÔNG TIN SẢN PHẨM ĐÃ CHỌN</h2>
+            </div>
+
+            <!-- cac san pham da chon -->
+            <div class="show-product-chocie">
+                <div class="branch">
+                    <h2>sản phẩm</h2>
+                    <h2>Tên</h2>
+                    <h2>Total</h2>
+                    <h2>Thành tiền</h2>
+                </div>
+
+                <div class="product-choice">
+                    <div class="detail-choice">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
+
+
 
 
 

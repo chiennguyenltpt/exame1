@@ -15,7 +15,7 @@ body{
     display: flex;
     align-items: center;
     background-color: rgb(7, 5, 4);
-    z-index: 1;
+    z-index: 4;
 }
 .nav .logo img {
     width: 65px;
@@ -42,7 +42,7 @@ body{
     font-weight: 10px;
     
 }
-.button {
+/* .button {
     width: 140px;
     height: 45px;
     font-family: 'Roboto', sans-serif;
@@ -65,20 +65,29 @@ body{
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color:black;
     
-  }
+  } */
 
 
 .bnt {
     position: absolute;
-    top: 10px;
-    right: 250px;
-    width: 150;
-    height: 50px;
+    top: 25px;
+    right: 200px;
+    
+    
+    
+}
 
-}
-i{
+.bnt i{
     font-size: 25px;
+    
 }
+.bnt i:hover{
+    cursor: pointer;
+}
+
+
+
+
 .button {
     width: 140px;
     height: 45px;
@@ -102,24 +111,31 @@ i{
     color:black;
     
 }
+
+
 .user {
     position: relative;
     font-family: "Great";
     color: whitesmoke;
-    z-index: 2;
+    z-index: 5;
 }
 .user i {
     top: 25px;
     float: right;
-    right: 200px;
+    right: 240px;
     position: fixed;
     font-size: 25px;
+    
 } 
+.user i:hover {
+    cursor: pointer;
+}
+
 
 
 .user h3 {
     position: fixed;
-    right: 70px;
+    right: 130px;
     top: 10px;
     letter-spacing: 0.5px;
     
@@ -159,10 +175,10 @@ i{
     position: fixed;
     width: 40%;
     height: 70px;
-    
+    z-index: 1;
     border-radius: 15px;
     right: -4%;
-    
+    display: none;
     
 }
 .nav-newsproduct button {
@@ -181,6 +197,7 @@ i{
     outline: none;
     margin-top: 125px;
     margin-right: 45px;
+    
 }
 .nav-newsproduct button:hover {
     background-color: #ef585b;
@@ -208,6 +225,8 @@ i{
     right: 100px;
     position: fixed;
     margin-bottom:-150px ;
+    z-index: 5;
+    
 }
 
 input[type="search"] {
@@ -218,6 +237,7 @@ input[type="search"] {
     height: 30px;
     transition: 0.4s all ease-in-out;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 input[type="search"]:focus {
@@ -430,4 +450,143 @@ input[type="search"]:focus {
     color: #2EE59D;
     left: 15px;
     visibility: hidden;
+}
+/* thông báo thêm thành công vào giỏ hàng */
+
+.notice-addcard {
+    position: fixed;
+    width: 400px;
+    height:100px;
+    background-color: aliceblue;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    border-radius: 15px;
+    visibility: hidden;
+}
+
+.notice-addcard h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-top:40px ;
+    color: #1de997;
+    font-weight: 400;
+}
+
+
+/* gio hang */
+.shopping{
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    background-color: white;
+    top: -8px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2  ;
+    overflow:auto;
+    border-top: rgba(210, 29, 29, 0.4) 2px solid;
+    visibility: hidden;
+
+    
+}
+.notice-product {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    color: #ef585b;
+    
+    line-height: 100%;
+ 
+    
+}
+.show-product-chocie{
+    z-index: -1;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    /* height: 150%; */
+    display: flex;
+    justify-content: space-around;
+    
+}
+/* title */
+.branch{
+    width: 100%;
+    height: 40px ;
+    display: flex;
+    
+    justify-content: space-evenly;  
+    margin-bottom: -30px; 
+    line-height: 100%;
+    align-items: center;
+    border-bottom:2px black solid ;
+    position: absolute;
+    text-transform: uppercase;
+}
+
+/* san pham da them */
+.product-choice {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 650px;
+    border: 1px black solid;
+    position: absolute;
+    top: 61px;
+    display: grid;
+    grid-template-rows: 150px 150px 150px 150px 150px 150px;
+    
+   
+}
+.detail-choice{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 100px 100px 120px 120px;
+    border-bottom: #1de997 2px solid;
+    gap: 10px 10px;
+    
+}
+.detail-choice img{
+    width: 90px;
+    border-radius: 15px;
+    border: 2px black solid;
+    height: 70px;
+    object-fit: cover;
+    align-items: center;
+    margin: 30px;
+    margin-left: 90px;
+    
+    
+}
+.name-product {
+   
+   width: 100%;
+   height: 100%;
+   position: relative;
+}
+.name-product h2{
+    position: relative;
+    top: 25%;
+    left: 70%;
+}
+
+
+
+.input-product input {
+    width: 40px;
+    position: relative;
+    top: 45%;
+    left: 80%;
+    
+}
+.price-product { 
+    position: relative;
+    top: 50%;
+    left: 110%;
+    font-size: 22px;
+    font-weight: bold;
 }
