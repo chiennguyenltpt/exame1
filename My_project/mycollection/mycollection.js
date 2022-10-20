@@ -21,7 +21,7 @@ localStorage.setItem("product", JSON.stringify(product))
 
 // chuyen ve trang home
 function moveHome() {
-    window.location.href = '/My_project/projectone/index-Home.html'
+    window.location.href = '../projectone/index-Home.html'
 }
 
 // show user name 
@@ -184,9 +184,7 @@ function clickAddToCard() {
 function selectProduct() {
     let userChoice = JSON.parse(localStorage.getItem("userChoice"))
     let layOutSum = document.getElementsByClassName("detail-choice")
-    console.log(userChoice);
-    let layOut = ''
-    
+    let layOut = ''; 
     for (let key1=0;key1<userChoice.length;key1++) {
         layOut+= ` <div class="img-product">
                         <img src="${userChoice[key1].img}" alt="">
@@ -195,15 +193,16 @@ function selectProduct() {
                         <h2>${userChoice[key1].name}<h2>
                     </div>
                     <div class="input-product">
-                        <input  class='input-value' type="number" onkeydown="buy(event)" min="1" value="1">
+                        <input  class='input-value' type="number" onclick="buyClick(),total()" onkeydown="buy(event)" min="1" value="1">
+                        <button onclick = "noticeCheckoutSuccess()">CheckOut</button>
                     </div>
                     <div class="price-product">
                         <h2>${userChoice[key1].price}</h2>
                         <span ></span>
                         <p onclick="total()">Total :<label></label> </p> 
                         <button onclick="deleteProduct(${key1})" class"bnt-delete"  ><i class="fa-solid fa-trash"></i></button>
-
                     </div>`
+                     
                     
                 }
                 
@@ -215,15 +214,12 @@ selectProduct()
 
 // xoa gio hang
 function deleteProduct(event){
-    console.log("1111",event);
     let userChoice = JSON.parse(localStorage.getItem("userChoice"))
     console.log(userChoice);
     userChoice.splice(event,1)
     localStorage.setItem("userChoice",JSON.stringify(userChoice))
     selectProduct()
-    
 }
-// deleteProduct()
 
 
 function buy (e) {
@@ -242,7 +238,23 @@ function buy (e) {
         }
     }
 }
+// mua bang click
 
+function buyClick() {
+    let price = document.querySelectorAll(".price-product h2")
+        let sum = document.getElementsByClassName("input-value")
+        let price_product = document.querySelectorAll(".price-product span")
+        for(let i = 0;i<sum.length;i++){
+            for(let j =0 ;j<price.length;j++) {
+                for(let x=0;x<price_product.length;x++){
+                    let value = sum[i].value*price[i].textContent
+                    console.log(value);
+                    price_product[i].textContent=value
+                }
+            }
+        }
+
+}
 // tinh tong tien 
 function total(){
     let sum =0 
@@ -258,7 +270,8 @@ function total(){
 
 
 // show gio hang
-function showCard() {console.log(1);
+function showCard() {
+    
     if(document.getElementsByClassName("shopping")[0].style.visibility=="hidden") {
         document.getElementsByClassName("shopping")[0].style.visibility="visible" 
         document.getElementsByClassName('nav-newsproduct')[0].style.visibility = "hidden"
@@ -267,4 +280,19 @@ function showCard() {console.log(1);
         document.getElementsByClassName('nav-newsproduct')[0].style.visibility = "visible"
 
     }   
+}
+
+
+// thong bao mua thanh cong trong gio hang 
+function noticeCheckoutSuccess (){
+    document.getElementsByClassName("notice-checkout-Success")[0].style.visibility = "visible"
+    setTimeout(function() {
+        document.getElementsByClassName("notice-checkout-Success")[0].style.visibility = "hidden"
+    }, 1500);
+    localStorage.setItem("userChoice",JSON.stringify([]))
+}
+// /thoat gio hang
+function outCard() {
+    document.getElementsByClassName("shopping")[0].style.visibility="hidden" 
+    document.getElementsByClassName('nav-newsproduct')[0].style.visibility = "visible"
 }

@@ -24,11 +24,11 @@
                 <li><button class="button">ABOUT ME</button></li>
                 <li><button class="button" onclick="dieuhuong()">MY COLLECTION</button></li>
                 <li><button class="button">CONTACT ME</button></li>
-                <li><i onclick="showCard ()" class="fa-solid fa-cart-arrow-down"></i></li>
+                <li><i onclick="showCard() , selectProduct()" class="fa-solid fa-cart-arrow-down"></i></li>
             </ul>
             <div class="nav-newsproduct">
                 <button onclick="newproduct()">new product</button>
-                <button onclick="trendProduct () ">trend product</button>
+                <button onclick="trendProduct ()">trend product</button>
                 <button onclick="saleProduct()">sale product</button>
             </div>
         </div>
@@ -98,7 +98,10 @@
             <div  class="notice-product">
                 <h2>THÔNG TIN SẢN PHẨM ĐÃ CHỌN</h2>
             </div>
-
+            <div class="notice-checkout-Success">
+               <p> BẠN ĐÃ THANH TOÁN THÀNH CÔNG</p>
+            </div>
+            <button onclick="outCard()" class="card" >OUT</button>
             <!-- cac san pham da chon -->
             <div class="show-product-chocie">
                 <div class="branch">
