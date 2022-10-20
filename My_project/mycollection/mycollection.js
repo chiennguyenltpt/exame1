@@ -21,18 +21,16 @@ localStorage.setItem("product", JSON.stringify(product))
 
 // chuyen ve trang home
 function moveHome() {
-    window.location.href = '/projectone/index-Home.html'
+    window.location.href = '/My_project/projectone/index-Home.html'
 }
 
 // show user name 
 function showName() {
     console.log(localStorage.getItem('inforAccount'));
     let name = JSON.parse(localStorage.getItem('inforAccount')).username;
-    console.log(name);
     console.log(localStorage.getItem('inforAccount'));
     document.querySelector('.user h3').textContent = name
 }
-
 
 // newproduct 
 function newproduct() {
@@ -154,9 +152,9 @@ function clickAddToCard() {
     let imgName = document.getElementById('descrise-product').getAttribute('src')
     let nameProduct = document.querySelectorAll(".detail span")[0].textContent
     let price = document.querySelector(".price span").textContent
+    console.log(JSON.parse(localStorage.getItem("userChoice")));
     
-    
-    if (JSON.parse(localStorage.getItem("userChoice"))==null){
+    if (JSON.parse(localStorage.getItem("userChoice"))==null ){
         let arr = [{
             name:nameProduct,
             img:imgName,
@@ -165,12 +163,13 @@ function clickAddToCard() {
         localStorage.setItem("userChoice",JSON.stringify(arr))
     } else {
         let userChoice =JSON.parse(localStorage.getItem("userChoice"))
-        console.log(userChoice);
+        
         let arr = [{
             name:nameProduct,
             img:imgName,
             price:price
         }]
+        
         localStorage.setItem("userChoice",JSON.stringify(arr.concat(userChoice)))
     }
     
@@ -183,45 +182,89 @@ function clickAddToCard() {
 
 // chon san phan trong ghi vao trong gio hang 
 function selectProduct() {
-    let imgName = document.getElementById('descrise-product').getAttribute('src')
-    let nameProduct = document.querySelectorAll(".detail span")[0].textContent
-    let price = document.querySelector(".price span").textContent
-    console.log(imgName);
-    console.log(nameProduct);
-    console.log(price);
-
-    let layOut = ` <div class="img-product">
-                        <img src="${imgName}" alt="">
+    let userChoice = JSON.parse(localStorage.getItem("userChoice"))
+    let layOutSum = document.getElementsByClassName("detail-choice")
+    console.log(userChoice);
+    let layOut = ''
+    
+    for (let key1=0;key1<userChoice.length;key1++) {
+        layOut+= ` <div class="img-product">
+                        <img src="${userChoice[key1].img}" alt="">
                     </div>
                     <div class="name-product">
-                        <h2>${nameProduct}<h2>
+                        <h2>${userChoice[key1].name}<h2>
                     </div>
                     <div class="input-product">
-                        <input type="number" onkeydown="buy(event)">
+                        <input  class='input-value' type="number" onkeydown="buy(event)" min="1" value="1">
                     </div>
                     <div class="price-product">
-                        <h2>0</h2>
-                    </div>`
-    let layOutSum = document.getElementsByClassName("detail-choice")
-    layOutSum[0].innerHTML = layOut
+                        <h2>${userChoice[key1].price}</h2>
+                        <span ></span>
+                        <p onclick="total()">Total :<label></label> </p> 
+                        <button onclick="deleteProduct(${key1})" class"bnt-delete"  ><i class="fa-solid fa-trash"></i></button>
 
-    
+                    </div>`
+                    
+                }
+                
+        layOutSum[0].innerHTML = layOut
 }
 selectProduct()
 
+
+
+// xoa gio hang
+function deleteProduct(event){
+    console.log("1111",event);
+    let userChoice = JSON.parse(localStorage.getItem("userChoice"))
+    console.log(userChoice);
+    userChoice.splice(event,1)
+    localStorage.setItem("userChoice",JSON.stringify(userChoice))
+    selectProduct()
+    
+}
+// deleteProduct()
+
+
 function buy (e) {
     if (e.keyCode ==13) {
-        let price = document.querySelector(".price span").textContent
-        let sum = document.querySelector(".input-product input").value
-        let price1 = sum* price  
-        console.log(price1);
-        let price_product = document.getElementsByClassName("price-product")[0]
-        price_product.innerHTML = price1
+        let price = document.querySelectorAll(".price-product h2")
+        let sum = document.getElementsByClassName("input-value")
+        let price_product = document.querySelectorAll(".price-product span")
+        for(let i = 0;i<sum.length;i++){
+            for(let j =0 ;j<price.length;j++) {
+                for(let x=0;x<price_product.length;x++){
+                    let value = sum[i].value*price[i].textContent
+                    console.log(value);
+                    price_product[i].textContent=value
+                }
+            }
+        }
     }
 }
 
+// tinh tong tien 
+function total(){
+    let sum =0 
+    let price_product = document.querySelectorAll(".price-product span")
+    for(let i=0;i<price_product.length;i++ ){
+        sum+=Number(price_product[i].textContent)
+    }
+    console.log(sum);
+    document.querySelector(".price-product p label").textContent = sum
 
-// them vao gio hang va tao bang moi 
-function storeShop(){
-      
+}
+
+
+
+// show gio hang
+function showCard() {console.log(1);
+    if(document.getElementsByClassName("shopping")[0].style.visibility=="hidden") {
+        document.getElementsByClassName("shopping")[0].style.visibility="visible" 
+        document.getElementsByClassName('nav-newsproduct')[0].style.visibility = "hidden"
+    } else {
+        document.getElementsByClassName("shopping")[0].style.visibility="hidden" 
+        document.getElementsByClassName('nav-newsproduct')[0].style.visibility = "visible"
+
+    }   
 }

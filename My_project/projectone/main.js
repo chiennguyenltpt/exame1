@@ -9,7 +9,7 @@ function logOut (){
     } else {
         newValue = false
         localStorage.setItem('boolean' , JSON.stringify(newValue))    
-        window.location.href = "/login/index-login.html"
+        window.location.href = "/My_project/login/index-login.html"
     }
 }
 
@@ -26,7 +26,7 @@ function resetLogout(){
 
 // xin chao user 
 function helloUser(){
-    if (localStorage.getItem("inforAccount")==null){
+    if (localStorage.getItem("inforAccount")!=null){
         let userValue = JSON.parse(localStorage.getItem('infoUser'))
         let indexUser = localStorage.getItem('user')
         console.log(userValue[indexUser].username);
@@ -56,7 +56,8 @@ function showLogoutAndAccount() {
 // func chang password 
 
 function changePassword() {
-
+    // lay du lieu cua password vs du lieu moi khi nguoi dung nhap vao
+    
     let oldPassword =  document.querySelectorAll(".makeNewPassword input")[0].value;
     let newPassword =document.querySelectorAll(".makeNewPassword input")[1].value;
     let confirmPassword = document.querySelectorAll(".makeNewPassword input")[2].value;

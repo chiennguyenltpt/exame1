@@ -45,7 +45,7 @@ function login() {
                index = i;
                localStorage.setItem("boolean", 'true')
                localStorage.setItem('user', index)
-               window.location.href = '/projectone/index-Home.html'
+               window.location.href = '/My_project/projectone/index-Home.html'
                break
                
             }
@@ -57,7 +57,7 @@ function login() {
 
 
 function signup() {
-   document.location.href = '/Sign Up/sign-up.html'
+   window.location.href = '/My_project/Sign Up/sign-up.html'
 }
 
 
