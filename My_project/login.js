@@ -74,12 +74,12 @@ function resetLogout(){
    let getBoolean =JSON.parse(localStorage.getItem('boolean'))
    console.log(getBoolean);
    if(getBoolean==false) {
-      window.location.href = './login.html'
+      window.location.href = './index.html'
    }
 }
 
 function moveLogin() {
-   window.location.href="./login.html"
+   window.location.href="./index.html"
 }
 function moveContactMe() {
    window.location.href="./contactme.html"

@@ -1,4 +1,4 @@
-let product = [{ name: 'baz', dame: '30%', clid: '0%', img: './image/anh1.jpeg', price: 50, id: 0 },
+var product = [{ name: 'baz', dame: '30%', clid: '0%', img: './image/anh1.jpeg', price: 50, id: 0 },
 { name: 'ARC', dame: '60%', clid: '10%', img: './image/anh2.jpeg', price: 30, id: 1 },
 { name: 'ADS', dame: '70%', clid: '90%', img: './image/anh3.jpg', price: 40, id: 2 },
 { name: 'AEK-971', dame: '45%', clid: '80%', img: './image/anh4.jpeg', price: 60, id: 3 },
@@ -309,6 +309,27 @@ function moveContacMe() {
 function resetLogout(){
     let getBoolean =JSON.parse(localStorage.getItem('boolean'))
     if(getBoolean==false) {
-       window.location.href = './login.html'
+       window.location.href = './index.html'
     }
  }
+
+ // chuc nang tim kiem 
+//  function searchProduct () {
+//     let userInputValue = document.getElementById("search").value;
+//     for (key of product) {console.log(userInputValue);console.log(key.name);
+//         if(userInputValue==key.name.trim()){
+//             console.log('hihi');
+//         }
+//     }
+//     // console.log(value);
+//     // let layOut = document.getElementById('show-product')
+    // let layOutSum = "";
+   
+    // layOutSum += `
+    // <div class="layout-content" >
+    //         <img class='gun'  src="${value.img}" alt="">
+    // </div>`
+    
+    // layOut.innerHTML = layOutSum
+//  }
+ saleProduct()
