@@ -21,7 +21,7 @@ localStorage.setItem("product", JSON.stringify(product))
 
 // chuyen ve trang home
 function moveHome() {
-    window.location.href = '../projectone/index-Home.html'
+    window.location.href = '../home.html'
 }
 
 // show user name 
@@ -296,3 +296,19 @@ function outCard() {
     document.getElementsByClassName("shopping")[0].style.visibility="hidden" 
     document.getElementsByClassName('nav-newsproduct')[0].style.visibility = "visible"
 }
+function moveMyCollection() {
+    window.location.href ="./mycollection.html"
+}
+
+//chuyen sang page contact me
+function moveContacMe() {
+    window.location.href ="../contactme.html"
+}
+
+//reset logout
+function resetLogout(){
+    let getBoolean =JSON.parse(localStorage.getItem('boolean'))
+    if(getBoolean==false) {
+       window.location.href = './login.html'
+    }
+ }

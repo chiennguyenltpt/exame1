@@ -88,7 +88,7 @@ function checkInputs() {
 			} else {
 				getInfoUser.push(user);
 				localStorage.setItem("infoUser",JSON.stringify(getInfoUser))
-				document.location.href = '/login/index-login.html'
+				document.location.href = './login.html'
 			}
 
 		}
@@ -125,5 +125,5 @@ function isEmail(email) {
 }
 
 function moveLogin(){
-	window.location.href = '../login/index-login.html'
+	window.location.href = './login.html'
 }

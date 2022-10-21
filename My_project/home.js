@@ -5,11 +5,11 @@ function logOut (){
     let booleanLogOut = localStorage.getItem("boolean") 
     let newValue = JSON.parse(booleanLogOut)  
     if(newValue === false) {
-        window.location.href = "/login/index-login.html"
+        window.location.href = "./login.html"
     } else {
         newValue = false
         localStorage.setItem('boolean' , JSON.stringify(newValue))    
-        window.location.href = "/My_project/login/index-login.html"
+        window.location.href = "./login.html"
     }
 }
 
@@ -19,7 +19,7 @@ function logOut (){
 function resetLogout(){
     let getBoolean =JSON.parse(localStorage.getItem('boolean'))
     if(getBoolean==false) {
-       window.location.href = '../login/index-login.html'
+       window.location.href = './login.html'
     }
  }
 
@@ -168,3 +168,10 @@ function moveCollection() {
 }
 
     
+// chuyen dang con tach me
+function contactMe() {
+    window.location.href = './contactme.html'
+}
+function Home() {
+    window.location.href = './home.html'
+}

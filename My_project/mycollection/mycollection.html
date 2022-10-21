@@ -12,9 +12,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body onload="showName(),newproduct() ">
+<body onload="resetLogout(), showName(),newproduct() ">
     <div class="container">
-        <img src="../projectone/image/baner1.jpeg" alt="">
+        <img src="../image/baner1.jpeg" alt="">
         <div class="nav">
             <div class="logo">
                 <img src="./image/logo.png" alt="">
@@ -22,8 +22,8 @@
             <ul>
                 <li><button class="button" onclick="moveHome()"> HOME</button></li>
                 <li><button class="button">ABOUT ME</button></li>
-                <li><button class="button" onclick="dieuhuong()">MY COLLECTION</button></li>
-                <li><button class="button">CONTACT ME</button></li>
+                <li><button class="button" onclick="moveMyCollection()">MY COLLECTION</button></li>
+                <li><button class="button" onclick="moveContacMe()">CONTACT ME</button></li>
                 <li><i onclick="showCard() , selectProduct()" class="fa-solid fa-cart-arrow-down"></i></li>
             </ul>
             <div class="nav-newsproduct">
@@ -101,7 +101,7 @@
             <div class="notice-checkout-Success">
                <p> BẠN ĐÃ THANH TOÁN THÀNH CÔNG</p>
             </div>
-            <button onclick="outCard()" class="card" >OUT</button>
+            <button onclick="outCard()" class="card" >CANCEL</button>
             <!-- cac san pham da chon -->
             <div class="show-product-chocie">
                 <div class="branch">

@@ -12,10 +12,17 @@ function login() {
 
    let password = document.querySelector(".password input");
    let passwordValue = password.value.trim();
-
+   let getInfor = JSON.parse(localStorage.getItem("infoUser"))
+   let flag = true 
+   for(key of getInfor) {
+      if(email!==key.mail || password!==key.password) {
+         flag=false
+         break 
+      }
+   }
 
    //validate
-   if (isEmail(emailValue) == false) {
+   if (isEmail(emailValue) == false || flag ==false) {
       document.querySelector(".mail small ").innerHTML = "email khong chinh xac"
       document.querySelector(".mail small ").style.visibility = "visible"
       document.querySelector(".mail small ").style.color = "red"
@@ -23,7 +30,7 @@ function login() {
    }
 
    //kiem tra do dai ky tu cua acc, pass
-   if ((passwordValue.length < 4) || (passwordValue == "")) {
+   if ((passwordValue.length < 4) || (passwordValue == "") ||flag ==false) {
       document.querySelector(".password small ").innerHTML = "mat khau khong chinh xac"
       document.querySelector(".password small ").style.visibility = "visible"
       document.querySelector(".password small ").style.color = "red"
@@ -45,7 +52,7 @@ function login() {
                index = i;
                localStorage.setItem("boolean", 'true')
                localStorage.setItem('user', index)
-               window.location.href = '/My_project/projectone/index-Home.html'
+               window.location.href = './home.html'
                break
                
             }
@@ -57,7 +64,7 @@ function login() {
 
 
 function signup() {
-   window.location.href = '/My_project/Sign Up/sign-up.html'
+   window.location.href = './signup.html'
 }
 
 
@@ -67,6 +74,15 @@ function resetLogout(){
    let getBoolean =JSON.parse(localStorage.getItem('boolean'))
    console.log(getBoolean);
    if(getBoolean==false) {
-      window.location.href = '../login/index-login.html'
+      window.location.href = './login.html'
    }
 }
+
+function moveLogin() {
+   window.location.href="./login.html"
+}
+function moveContactMe() {
+   window.location.href="./contactme.html"
+}
+
+
