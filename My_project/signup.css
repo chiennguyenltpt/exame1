@@ -112,12 +112,16 @@ body {
 	padding: 10px;
 	margin-top: 20px;
 	width: 100%;
+	cursor: pointer;
 }
 
 
 
 
-
+.login a {
+	color: rgb(43, 43, 235);
+	cursor: pointer;
+}
 
 
 
